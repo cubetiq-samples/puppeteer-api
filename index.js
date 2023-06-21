@@ -5,6 +5,7 @@ const fs = require('fs');
 const app = require('express')();
 const baseDir = process.env.DATA_DIR || '/app/data';
 const chromePath = undefined;
+const PORT = process.env.PORT || 4000;
 
 // Args to run chrome with
 const args = ['--no-sandbox', '--disable-setuid-sandbox']
@@ -135,4 +136,4 @@ app.get('/exit', async (req, res) => {
     process.exit(0);
 });
 
-app.listen(4000, () => console.log('Listening on port 4000'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
